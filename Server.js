@@ -13,7 +13,10 @@ app.use(cors({
   credentials: true 
 }));
 
-mongoose.connect("mongodb://localhost:27017")
+mongoose.connect(process.env.MONGO_URL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
 .then(()=>{
     console.log("Database Connected Successfully");
 })
@@ -23,7 +26,7 @@ mongoose.connect("mongodb://localhost:27017")
 
 AddRoutes(app);
 
-app.listen(port,()=>{
+app.listen(port,"0.0.0.0",()=>{
     console.log(`Server run at this server : http://localhost:${port}/`)
 })
 
