@@ -5,11 +5,12 @@ import { updateTodoFunc } from "../Controller/AddTodoFunc.Controller.js";
 import { deleteTodo } from "../Controller/AddTodoFunc.Controller.js";
 
 function AddRoutes(app){
-    app.post("/add",AddTodoFunc);
-    app.get("/",getTodoFunc);
-    app.get("/:id",editTodoFunc);
-    app.put("/:id",updateTodoFunc);
-    app.delete("/:id",deleteTodo);
+    app.get("/", getTodoFunc);                      
+    app.post("/add", AddTodoFunc);                  
+    app.get("/favicon.ico", (req, res) => res.status(204));
+    app.get("/:id", editTodoFunc);                 
+    app.put("/:id", updateTodoFunc);               
+    app.delete("/:id", deleteTodo);                
 }
 
 export default AddRoutes;
