@@ -5,7 +5,7 @@ import cors from "cors"
 
 const app=express();
 
-process.env.PORT || 5050
+const port=process.env.PORT || 5050
 app.use(express.json());
 app.use(cors({
   origin: "http://localhost:5173",
