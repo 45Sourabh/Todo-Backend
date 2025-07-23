@@ -8,7 +8,7 @@ const app=express();
 const port=process.env.PORT || 5050
 app.use(express.json());
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: ["http://localhost:5173","todo-frontend-cn7583itj-sourabh-patidars-projects-5c5668aa.vercel.app"],
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
   credentials: true 
 }));
