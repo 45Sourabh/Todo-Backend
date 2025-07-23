@@ -5,7 +5,7 @@ import cors from "cors"
 
 const app=express();
 
-const port=5050;
+process.env.PORT || 5050
 app.use(express.json());
 app.use(cors({
   origin: "http://localhost:5173",
@@ -26,7 +26,6 @@ mongoose.connect(process.env.MONGO_URL, {
 
 AddRoutes(app);
 
-app.listen(port,"0.0.0.0",()=>{
-    console.log(`Server run at this server : http://localhost:${port}/`)
-})
-
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
